@@ -1,0 +1,209 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent\textbf{ID: Isogonal Intersection [Jessie]}
+
+\vspace{1em}
+
+\noindent\textbf{Problem.}
+Let $ABC$ be a triangle with side lengths $BC=13$,
+$CA=14$, and $AB=15$. Let $G$, $H$, and $K$
+denote its centroid, orthocenter, and symmedian
+point, respectively. Let $P$ be the intersection
+of lines $GK$ and $AH$, and let $Q$ be the
+isogonal conjugate of $P$ with respect to
+triangle $ABC$.
+
+Find the value of
+\[
+\frac{[QBC]}{[ABC]},
+\]
+where $[XYZ]$ denotes the area of triangle $XYZ$.
+
+\vspace{1em}
+
+\noindent\textbf{Solution.}
+We use barycentric coordinates with respect to
+triangle $ABC$. Recall that if a point $X$ has
+barycentric coordinates $(x:y:z)$, then its
+normalized coordinates are obtained by dividing
+each component by $x+y+z$. In particular, for
+a point inside the triangle,
+\[
+\frac{[XBC]}{[ABC]}=\frac{x}{x+y+z}.
+\]
+
+We first determine the barycentric coordinates
+of $G$, $H$, and $K$. Since $G$ is the centroid,
+\[
+G=(1:1:1).
+\]
+The symmedian point has barycentric coordinates
+proportional to the squares of the corresponding
+side lengths. Therefore,
+\[
+K=(13^2:14^2:15^2)=(169:196:225).
+\]
+
+To determine the coordinates of the orthocenter
+$H$, place the triangle in the Cartesian plane
+with
+\[
+A=(0,0),\qquad B=(15,0).
+\]
+Let $C=(u,v)$. Using the given side lengths,
+\[
+u^2+v^2=196
+\]
+and
+\[
+(u-15)^2+v^2=169.
+\]
+Subtracting these equations gives
+\[
+30u-225=27,
+\]
+so
+\[
+u=\frac{42}{5},\qquad v=\frac{56}{5}.
+\]
+Hence,
+\[
+C=\left(\frac{42}{5},\frac{56}{5}\right).
+\]
+
+Since $AB$ is horizontal, the altitude from
+$C$ is the vertical line $x=\frac{42}{5}$.
+The slope of $BC$ is $-\frac{56}{33}$,
+so the altitude from $A$ has slope
+$\frac{33}{56}$. Their intersection is
+\[
+H=\left(\frac{42}{5},\frac{99}{20}\right).
+\]
+
+Writing $H=(r:s:t)$ in barycentric coordinates,
+we obtain
+\[
+\frac{15s+\frac{42}{5}t}{r+s+t}
+=\frac{42}{5}
+\]
+and
+\[
+\frac{\frac{56}{5}t}{r+s+t}
+=\frac{99}{20}.
+\]
+Solving these equations gives
+\[
+H=(55:70:99).
+\]
+
+We now determine the intersection $P$ of
+lines $GK$ and $AH$. In barycentric
+coordinates, the equation of the line through
+two points is obtained by setting the
+determinant of their coordinate triples
+equal to zero. Thus, line $GK$ satisfies
+\[
+\begin{vmatrix}
+x&y&z\\
+1&1&1\\
+169&196&225
+\end{vmatrix}=0.
+\]
+Expanding and simplifying gives
+\[
+29x-56y+27z=0.
+\]
+
+Similarly, since $A=(1:0:0)$ and
+$H=(55:70:99)$, the line $AH$ satisfies
+\[
+\begin{vmatrix}
+x&y&z\\
+1&0&0\\
+55&70&99
+\end{vmatrix}=0,
+\]
+which simplifies to
+\[
+99y-70z=0.
+\]
+Therefore, any point on $AH$ satisfies
+\[
+y:z=70:99.
+\]
+
+Substituting $y=70$ and $z=99$ into
+the equation of $GK$, we find
+\[
+29x-56(70)+27(99)=0.
+\]
+Thus,
+\[
+29x=3920-2673=1247,
+\]
+which gives $x=43$. Consequently,
+\[
+P=(43:70:99).
+\]
+
+We now use the fact that the isogonal conjugate
+of a point with barycentric coordinates
+$(x:y:z)$ has coordinates
+\[
+\left(
+\frac{a^2}{x}:
+\frac{b^2}{y}:
+\frac{c^2}{z}
+\right),
+\]
+where $a=BC$, $b=CA$, and $c=AB$.
+
+Applying this to $P$, we obtain
+\[
+Q=\left(
+\frac{169}{43}:
+\frac{196}{70}:
+\frac{225}{99}
+\right).
+\]
+Simplifying,
+\[
+Q=\left(
+\frac{169}{43}:
+\frac{14}{5}:
+\frac{25}{11}
+\right).
+\]
+
+Since all three coordinates are positive,
+$Q$ lies inside triangle $ABC$, so the
+desired area ratio is its first normalized
+barycentric coordinate. Therefore,
+\[
+\frac{[QBC]}{[ABC]}
+=
+\frac{\frac{169}{43}}
+{\frac{169}{43}+\frac{14}{5}+\frac{25}{11}}.
+\]
+
+Multiplying the numerator and denominator
+by $43\cdot5\cdot11=2365$, we obtain
+\[
+\frac{[QBC]}{[ABC]}
+=
+\frac{9295}{9295+6622+5375}
+=
+\frac{9295}{21292}.
+\]
+
+Therefore, the requested ratio is
+\[
+\boxed{\frac{9295}{21292}}.
+\]
+
+\end{document}
